@@ -12,7 +12,7 @@ object RetrofitHelper {
     fun getInstance() : Retrofit{
         val interceptor = Interceptor { chain ->
             val request = chain.request().newBuilder()
-                .addHeader("X-RapidAPI-Key", "636ef32b91msh69e628851d97e31p124fc2jsneeab283a8ede")
+                .addHeader("X-RapidAPI-Key", RapidApi().getKey())
                 .addHeader("X-RapidAPI-Host", "social-media-video-downloader.p.rapidapi.com")
                 .build()
             chain.proceed(request)
